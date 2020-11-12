@@ -118,3 +118,55 @@ function get_error($feedback){
         </div>';
     return $error_exp;
 }
+function get_db_connection($host, $db, $username, $password){
+    $pdo = null;
+    $charset = 'utf8mb4';
+    $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+    $options = [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+    ];
+    try {
+        $pdo = new PDO($dsn, $username, $password,$options);
+    } catch (\PDOException $e) {
+        echo sprintf("Failed to connect. %s",$e->getMessage());
+    }
+    return $pdo;
+}
+function get_series($pdo){
+    $stmt = $pdo->prepare('SELECT * FROM series');
+    $stmt->execute();
+    $series = $stmt->fetchAll();
+    $series_exp = Array();
+    /* Create array with htmlspecialchars */
+    foreach ($series as $key => $value){
+        foreach ($value as $user_key => $user_input) {
+            $series_exp[$key][$user_key] = htmlspecialchars($user_input);
+        }
+    }
+    return $series_exp;
+}
+
+function get_series_table($series_array){
+    $table_exp = '
+ <table class="table table-hover">
+ <thead
+ <th scope="col">Series</th>
+ <th scope="col"></th>
+ </tr>
+ </thead>
+ <tbody>';
+    foreach($series_array as $key => $value){
+        $table_exp .= '
+ <tr>
+ <th scope="row">'.$value['name'].'</th>
+ <td><a href=“/DDWT20/week1/serie/?serie_id='.$value['id'].'" role="button" class="btn btn-primary">More info</a></td>
+ </tr>
+ ';
+    }
+return $table_exp;
+}
+
+
+
+

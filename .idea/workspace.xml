@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="36edaa38-aa1c-43ff-9647-b95a1560e805" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/week1/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/week1/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week1/model.php" beforeDir="false" afterPath="$PROJECT_DIR$/week1/model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week1/views/cards.php" beforeDir="false" afterPath="$PROJECT_DIR$/week1/views/cards.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Pull.Settings">
+    <option name="BRANCH" value="master" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpServers">
+    <servers>
+      <server id="20db837e-d301-4897-84b0-27dcea0c0996" name="Unnamed" />
+    </servers>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
+  <component name="ProjectId" id="1k3opA7MpNAgqkiuWzjYosdPdyG" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="DDWT20" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner directory="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.DDWT20" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="36edaa38-aa1c-43ff-9647-b95a1560e805" name="Default Changelist" comment="" />
+      <created>1604938815678</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1604938815678</updated>
+      <workItem from="1604938816994" duration="175000" />
+      <workItem from="1604939009366" duration="1743000" />
+      <workItem from="1605105443564" duration="5878000" />
+      <workItem from="1605181526752" duration="478000" />
+      <workItem from="1605182081595" duration="597000" />
+      <workItem from="1605182736263" duration="4539000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-970" y="51" key="#CLI_Interpreters" timestamp="1605109591061">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="-970" y="51" key="#CLI_Interpreters/-1920.0.1920.1080/0.23.1280.732@-1920.0.1920.1080" timestamp="1605109591061" />
+    <state x="-970" y="51" key="#CLI_Interpreters/-1920.0.1920.1080/0.23.1280.733@-1920.0.1920.1080" timestamp="1605107448687" />
+    <state x="-994" y="83" key="#PHP" timestamp="1605109598831">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="-994" y="83" key="#PHP/-1920.0.1920.1080/0.23.1280.732@-1920.0.1920.1080" timestamp="1605109598831" />
+    <state x="-994" y="83" key="#PHP/-1920.0.1920.1080/0.23.1280.733@-1920.0.1920.1080" timestamp="1605107698746" />
+    <state x="-1104" y="76" key="#Test_Frameworks" timestamp="1605110050143">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="-1104" y="76" key="#Test_Frameworks/-1920.0.1920.1080/0.23.1280.732@-1920.0.1920.1080" timestamp="1605110050143" />
+    <state x="-1168" y="368" key="Github.ShareDialog" timestamp="1605182282196">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="-1168" y="368" key="Github.ShareDialog/-1920.0.1920.1080/0.23.1280.732@-1920.0.1920.1080" timestamp="1605182282196" />
+    <state x="501" y="274" key="Github.ShareDialog/-1920.0.1920.1080/0.23.1280.736@0.23.1280.736" timestamp="1604938922818" />
+    <state x="537" y="82" key="Github.UntrackedFilesDialog" timestamp="1604938937059">
+      <screen x="0" y="23" width="1280" height="736" />
+    </state>
+    <state x="537" y="82" key="Github.UntrackedFilesDialog/-1920.0.1920.1080/0.23.1280.736@0.23.1280.736" timestamp="1604938937059" />
+    <state width="1871" height="170" key="GridCell.Tab.0.bottom" timestamp="1605180560196">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1218" height="170" key="GridCell.Tab.0.bottom/-1920.0.1920.1080/0.23.1280.732@-1920.0.1920.1080" timestamp="1605110148925" />
+    <state width="1871" height="170" key="GridCell.Tab.0.bottom/-1920.0.1920.1080/0.23.1280.734@-1920.0.1920.1080" timestamp="1605180560196" />
+    <state width="1871" height="170" key="GridCell.Tab.0.center" timestamp="1605180560195">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1218" height="170" key="GridCell.Tab.0.center/-1920.0.1920.1080/0.23.1280.732@-1920.0.1920.1080" timestamp="1605110148922" />
+    <state width="1871" height="170" key="GridCell.Tab.0.center/-1920.0.1920.1080/0.23.1280.734@-1920.0.1920.1080" timestamp="1605180560195" />
+    <state width="1871" height="170" key="GridCell.Tab.0.left" timestamp="1605180560189">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1218" height="170" key="GridCell.Tab.0.left/-1920.0.1920.1080/0.23.1280.732@-1920.0.1920.1080" timestamp="1605110148920" />
+    <state width="1871" height="170" key="GridCell.Tab.0.left/-1920.0.1920.1080/0.23.1280.734@-1920.0.1920.1080" timestamp="1605180560189" />
+    <state width="1871" height="170" key="GridCell.Tab.0.right" timestamp="1605180560196">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1218" height="170" key="GridCell.Tab.0.right/-1920.0.1920.1080/0.23.1280.732@-1920.0.1920.1080" timestamp="1605110148924" />
+    <state width="1871" height="170" key="GridCell.Tab.0.right/-1920.0.1920.1080/0.23.1280.734@-1920.0.1920.1080" timestamp="1605180560196" />
+    <state x="-983" y="17" key="SettingsEditor" timestamp="1605182072807">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="-983" y="17" key="SettingsEditor/-1920.0.1920.1080/0.23.1280.732@-1920.0.1920.1080" timestamp="1605182072807" />
+    <state x="-983" y="17" key="SettingsEditor/-1920.0.1920.1080/0.23.1280.733@-1920.0.1920.1080" timestamp="1605107560596" />
+    <state x="-1575" y="128" key="Vcs.Push.Dialog.v2" timestamp="1605182863904">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="-1575" y="128" key="Vcs.Push.Dialog.v2/-1920.0.1920.1080/0.23.1280.732@-1920.0.1920.1080" timestamp="1605182863904" />
+    <state x="230" y="110" key="Vcs.Push.Dialog.v2/-1920.0.1920.1080/0.23.1280.736@0.23.1280.736" timestamp="1604939742031" />
+    <state x="-1293" y="357" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1605182401297">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="-1293" y="357" key="git4idea.remote.GitConfigureRemotesDialog/-1920.0.1920.1080/0.23.1280.732@-1920.0.1920.1080" timestamp="1605182401295" />
+    <state x="418" y="266" key="git4idea.remote.GitConfigureRemotesDialog/-1920.0.1920.1080/0.23.1280.736@0.23.1280.736" timestamp="1604939645536" />
+  </component>
+</project>

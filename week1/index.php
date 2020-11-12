@@ -7,7 +7,10 @@
  */
 
 include 'model.php';
-
+/* Connect to DB */
+$db = get_db_connection('localhost', 'ddwt20_week1', 'ddwt20','ddwt20');
+$series_count = count_series($db);
+$series_array = get_series($db);
 /* Landing page */
 if (new_route('/DDWT20/week1/', 'get')) {
     /* Page info */
@@ -273,3 +276,10 @@ elseif (new_route('/DDWT20/week1/remove/', 'post')) {
 else {
     http_response_code(404);
 }
+
+function count_series($pdo) {
+    $stmt = $pdo->prepare('SELECT COUNT(*) FROM series');
+    $stmt->execute();
+    return $stmt->fetchColumn();
+}
+
