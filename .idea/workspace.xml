@@ -11,9 +11,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36edaa38-aa1c-43ff-9647-b95a1560e805" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/week1/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/week1/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/week1/model.php" beforeDir="false" afterPath="$PROJECT_DIR$/week1/model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/week1/views/cards.php" beforeDir="false" afterPath="$PROJECT_DIR$/week1/views/cards.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week1/views/new.php" beforeDir="false" afterPath="$PROJECT_DIR$/week1/views/new.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week1/views/serie.php" beforeDir="false" afterPath="$PROJECT_DIR$/week1/views/serie.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +83,8 @@
       <workItem from="1605181526752" duration="478000" />
       <workItem from="1605182081595" duration="597000" />
       <workItem from="1605182736263" duration="4539000" />
+      <workItem from="1605443660132" duration="10280000" />
+      <workItem from="1605706041259" duration="12684000" />
     </task>
     <servers />
   </component>
@@ -153,6 +157,10 @@
     </state>
     <state x="-1575" y="128" key="Vcs.Push.Dialog.v2/-1920.0.1920.1080/0.23.1280.732@-1920.0.1920.1080" timestamp="1605182863904" />
     <state x="230" y="110" key="Vcs.Push.Dialog.v2/-1920.0.1920.1080/0.23.1280.736@0.23.1280.736" timestamp="1604939742031" />
+    <state x="-1249" y="172" width="586" height="735" key="find.popup" timestamp="1605531760816">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="-1249" y="172" width="586" height="735" key="find.popup/-1920.0.1920.1080/0.23.1280.732@-1920.0.1920.1080" timestamp="1605531760816" />
     <state x="-1293" y="357" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1605182401297">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>

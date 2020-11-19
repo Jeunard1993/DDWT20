@@ -118,6 +118,15 @@ function get_error($feedback){
         </div>';
     return $error_exp;
 }
+
+/**
+ * Creates a connection with our mysql database
+ * @param string $host hostname
+ * @param string $db database
+ * @param string $username username
+ * @param string $password password
+ * @return PDO
+ */
 function get_db_connection($host, $db, $username, $password){
     $pdo = null;
     $charset = 'utf8mb4';
@@ -133,6 +142,23 @@ function get_db_connection($host, $db, $username, $password){
     }
     return $pdo;
 }
+
+/**
+ * Return the total number of series in our database
+ * @param PDO $pdo pdo object
+ * @return int
+ */
+function count_series($pdo) {
+    $stmt = $pdo->prepare('SELECT COUNT(*) FROM series');
+    $stmt->execute();
+    return $stmt->fetchColumn();
+}
+
+/**
+ * Return all the series in our database
+ * @param PDO $pdo pdo object
+ * @return array
+ */
 function get_series($pdo){
     $stmt = $pdo->prepare('SELECT * FROM series');
     $stmt->execute();
@@ -147,10 +173,15 @@ function get_series($pdo){
     return $series_exp;
 }
 
+/**
+ * Return html code to display all our series
+ * @param array $series_array array with series instances
+ * @return string
+ */
 function get_series_table($series_array){
     $table_exp = '
  <table class="table table-hover">
- <thead
+ <thead>
  <th scope="col">Series</th>
  <th scope="col"></th>
  </tr>
@@ -160,12 +191,156 @@ function get_series_table($series_array){
         $table_exp .= '
  <tr>
  <th scope="row">'.$value['name'].'</th>
- <td><a href=“/DDWT20/week1/serie/?serie_id='.$value['id'].'" role="button" class="btn btn-primary">More info</a></td>
- </tr>
- ';
+ <td><a href="/DDWT20/week1/serie/?serie_id='.$value['id'].'" role="button" class="btn btn-primary">More info</a></td>
+ </tr>';
     }
+    $table_exp .= ' </tbody> </table>';
 return $table_exp;
 }
+
+/**
+ * Return information of a series
+ * @param PDO $pdo PDO object
+ * @param int $serie_id id of a serie
+ * @return array
+ */
+function get_series_info($pdo ,$serie_id){
+    $stmt = $pdo->prepare('SELECT * FROM series WHERE id = ?');
+    $stmt->execute([$serie_id]);
+    $serie_info = $stmt->fetch();
+    $serie_info_exp = Array();
+    /* Create array with htmlspecialchars */
+    foreach ($serie_info as $key => $value){
+        $serie_info_exp[$key] = htmlspecialchars($value);
+    }
+    return $serie_info_exp;
+}
+
+/**
+ * Return information of a series
+ * @param array $post_array information in POST
+ * @param PDO $pdo PDO object
+ * @return array
+ */
+function add_series($post_array, $pdo){
+    if (
+        empty($post_array['Name']) or
+        empty($post_array['Creator']) or empty($post_array['Seasons']) or
+        empty($post_array['Abstract'])
+    ){
+        return [
+            'type' => 'danger',
+            'm' => 'There was an error. Not all fields were filled in.'
+        ]; }
+    elseif (!is_numeric($post_array['Seasons'])) {
+        return [ 'type' => 'danger',
+            'message' => 'There was an error. You should enter a number in the field Seasons.'
+        ]; }
+    $stmt = $pdo->prepare('SELECT * FROM series WHERE name = ?');
+    $stmt->execute([$post_array['Name']]);
+    $serie = $stmt->rowCount();
+
+    if ($serie){
+        return ['type' => 'danger',
+            'message' => 'This series was already added.'
+        ]; }
+    $stmt = $pdo->prepare("INSERT INTO series (name, creator, seasons, abstract) VALUES (?, ?, ?, ?)");
+    $stmt->execute([$post_array['Name'],
+                    $post_array['Creator'],
+                    $post_array['Seasons'],
+                    $post_array['Abstract']]);
+    $inserted = $stmt->rowCount();
+    if ($inserted == 1) {
+        return [ 'type' => 'success',
+            'message' => 'Series was successfully added.'
+        ];
+    } else {
+        return [ 'type' => 'danger',
+            'message' => 'There was an error. The series was not added. Try it again'
+        ];
+    }
+}
+
+/**
+ * Update information of a series
+ * @param $post_array array of information in POST
+ * @param PDO $pdo PDO object
+ * @return array
+ */
+function update_series($post_array, $pdo){
+    if (
+        empty($post_array['Name']) or
+        empty($post_array['Creator']) or empty($post_array['Seasons']) or
+        empty($post_array['Abstract'])
+    ){
+        return [
+            'type' => 'danger',
+            'm' => 'There was an error. Not all fields were filled in.'
+        ]; }
+    elseif (!is_numeric($post_array['Seasons'])) {
+        return [ 'type' => 'danger',
+            'message' => 'There was an error. You should enter a number in the field Seasons.'
+        ]; }
+    /* Get current series name */
+    $stmt = $pdo->prepare('SELECT * FROM series WHERE id = ?');
+    $stmt->execute([$post_array['serie_id']]);
+    $serie = $stmt->fetch();
+    $current_name = $serie['name'];
+
+    /* Check if serie already exists */
+    $stmt = $pdo->prepare('SELECT * FROM series WHERE name = ?');
+    $stmt->execute([$post_array['Name']]);
+    $serie = $stmt->fetch();
+    if ($post_array['Name'] == $serie['name'] and $serie['name'] != $current_name){
+        return ['type' => 'danger',
+            'message' => sprintf("The name of the series cannot be changed. %s already exists.",
+                $post_array['Name'])];
+        }
+
+    $stmt = $pdo->prepare("UPDATE series SET name = ?, creator = ?, seasons = ?, abstract = ? WHERE id = ?");
+    $stmt->execute([$post_array['Name'],
+        $post_array['Creator'],
+        $post_array['Seasons'],
+        $post_array['Abstract'],
+        $post_array['serie_id']]);
+    $updated = $stmt->rowCount();
+    if ($updated == 1) {
+        return [ 'type' => 'success',
+            'message' => sprintf('Series "%s" was edited!', $post_array["Name"])
+        ];
+    } else {
+        return [ 'type' => 'warning',
+            'message' => 'The series was not edited. No changes were detected'
+        ];
+    }
+}
+
+/**
+ * Remove serie
+ * @param PDO $pdo PDO object
+ * @param $serie_id id of serie
+ * @return array
+ */
+function remove_serie($pdo, $serie_id){
+    /* Delete Serie */
+    $stmt = $pdo->prepare("DELETE FROM series WHERE id = ?");
+    $stmt->execute([$serie_id]);
+    $deleted = $stmt->rowCount();
+    if ($deleted == 1) {
+        return [
+            'type' => 'success',
+            'message' => sprintf("Serie was removed!")
+        ];
+    } else {
+        return [
+            'type' => 'warning',
+            'message' => 'An error occurred. The series was not removed.'
+            ];
+    }
+
+}
+
+
 
 
 
