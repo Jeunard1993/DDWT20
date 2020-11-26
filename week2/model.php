@@ -290,13 +290,7 @@ function add_serie($pdo, $serie_info){
  * @return array
  */
 function update_serie($pdo, $serie_info){
-    /* Check permissions */
-    if($serie_info['user']!= get_user_id()){
-        return [
-            'type' => 'warning',
-            'message' => 'You do not have have permission. The series was not updated.'
-        ];
-    }
+
     /* Check if all fields are set */
     if (
         empty($serie_info['Name']) or
@@ -324,6 +318,15 @@ function update_serie($pdo, $serie_info){
     $stmt->execute([$serie_info['serie_id']]);
     $serie = $stmt->fetch();
     $current_name = $serie['name'];
+    $user = $serie['user'];
+
+    /* Check permissions */
+    if($user!= get_user_id()){
+        return [
+            'type' => 'warning',
+            'message' => 'You do not have have permission. The series was not updated.'
+        ];
+    }
 
     /* Check if serie already exists */
     $stmt = $pdo->prepare('SELECT * FROM series WHERE name = ?');
@@ -337,7 +340,7 @@ function update_serie($pdo, $serie_info){
     }
 
     /* Update Serie */
-    session_start();
+
     $stmt = $pdo->prepare("UPDATE series SET name = ?, creator = ?, seasons = ?, abstract = ?, user = ? WHERE id = ?");
     $stmt->execute([
         $serie_info['Name'],
