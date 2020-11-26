@@ -40,9 +40,6 @@ $template = Array(
 
 /* Landing page */
 if (new_route('/DDWT20/week2/', 'get')) {
-    /* Get Number of Series */
-    //$nbr_series = count_series($db);
-
     /* Page info */
     $page_title = 'Home';
     $breadcrumbs = get_breadcrumbs([
@@ -53,7 +50,6 @@ if (new_route('/DDWT20/week2/', 'get')) {
     $navigation = get_navigation($template,1);
 
     /* Page content */
-    //$right_column = use_template('cards');
     $page_subtitle = 'The online platform to list your favorite series';
     $page_content = 'On Series Overview you can list your favorite series. You can see the favorite series of all Series Overview users. By sharing your favorite series, you can get inspired by others and explore new series.';
     if ( isset($_GET['error_msg']) ) { $error_msg = get_error($_GET['error_msg']); }
@@ -63,9 +59,6 @@ if (new_route('/DDWT20/week2/', 'get')) {
 
 /* Overview page */
 elseif (new_route('/DDWT20/week2/overview/', 'get')) {
-    /* Get Number of Series */
-    //$nbr_series = count_series($db);
-
     /* Page info */
     $page_title = 'Overview';
     $breadcrumbs = get_breadcrumbs([
@@ -76,7 +69,6 @@ elseif (new_route('/DDWT20/week2/overview/', 'get')) {
     $navigation = get_navigation($template,2);
 
     /* Page content */
-    //$right_column = use_template('cards');
     $page_subtitle = 'The overview of all series';
     $page_content = 'Here you find all series listed on Series Overview.';
     $left_content = get_serie_table(get_series($db),$db);
@@ -108,7 +100,6 @@ elseif (new_route('/DDWT20/week2/serie/', 'get')) {
     $navigation = get_navigation($template,2);
 
     /* Page content */
-    //$right_column = use_template('cards');
     $page_subtitle = sprintf("Information about %s", $serie_info['name']);
     $page_content = $serie_info['abstract'];
     $nbr_seasons = $serie_info['seasons'];
@@ -129,8 +120,6 @@ elseif (new_route('/DDWT20/week2/add/', 'get')) {
     if ( !check_login() ) {
         redirect('/DDWT20/week2/login/');
     }
-    /* Get Number of Series */
-    //$nbr_series = count_series($db);
 
     /* Page info */
     $page_title = 'Add Series';
@@ -142,7 +131,6 @@ elseif (new_route('/DDWT20/week2/add/', 'get')) {
     $navigation = get_navigation($template,3);
 
     /* Page content */
-    //$right_column = use_template('cards');
     $page_subtitle = 'Add your favorite series';
     $page_content = 'Fill in the details of you favorite series.';
     $submit_btn = "Add Series";
@@ -174,8 +162,6 @@ elseif (new_route('/DDWT20/week2/edit/', 'get')) {
     if ( !check_login() ) {
         redirect('/DDWT20/week2/login/');
     }
-    /* Get Number of Series */
-    //$nbr_series = count_series($db);
 
     /* Get serie info from db */
     $serie_id = $_GET['serie_id'];
@@ -191,7 +177,6 @@ elseif (new_route('/DDWT20/week2/edit/', 'get')) {
     $navigation = get_navigation($template,0);
 
     /* Page content */
-    //$right_column = use_template('cards');
     $page_subtitle = sprintf("Edit %s", $serie_info['name']);
     $page_content = 'Edit the series below.';
     $submit_btn = "Edit Series";
@@ -210,7 +195,7 @@ elseif (new_route('/DDWT20/week2/edit/', 'post')) {
     /* Update serie to database */
     $feedback = update_serie($db, $_POST);
     /* Redirect to serie GET route */
-    redirect(sprintf('/DDWT20/week2/serie/?serie_id=%s?error_msg=%s',$_POST["serie_id"] , json_encode($feedback)));
+    redirect(sprintf('/DDWT20/week2/serie/?serie_id=%s&error_msg=%s',$_POST["serie_id"] , json_encode($feedback)));
 }
 
 /* Remove serie */
@@ -232,8 +217,8 @@ elseif (new_route('/DDWT20/week2/myaccount/', 'get')) {
         redirect('/DDWT20/week2/login/');
     }
 
-    /* Get Number of Series */
-    $user = get_name($db,  1);
+    /* Get User */
+    $user = get_name($db,  get_user_id());
 
     /* Page info */
     $page_title = 'My Account';
@@ -245,7 +230,6 @@ elseif (new_route('/DDWT20/week2/myaccount/', 'get')) {
     $navigation = get_navigation($template,4);
 
     /* Page content */
-    //$right_column = use_template('cards');
     $page_subtitle = 'Account Overview';
     $page_content = 'Here you can see detail of your account';
 

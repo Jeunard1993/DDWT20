@@ -290,6 +290,13 @@ function add_serie($pdo, $serie_info){
  * @return array
  */
 function update_serie($pdo, $serie_info){
+    /* Check permissions */
+    if($serie_info['user']!= get_user_id()){
+        return [
+            'type' => 'warning',
+            'message' => 'You do not have have permission. The series was not updated.'
+        ];
+    }
     /* Check if all fields are set */
     if (
         empty($serie_info['Name']) or
@@ -364,6 +371,13 @@ function update_serie($pdo, $serie_info){
 function remove_serie($pdo, $serie_id){
     /* Get series info */
     $serie_info = get_serieinfo($pdo, $serie_id);
+    /* Check permission */
+    if($serie_info['user']!= get_user_id()){
+        return [
+            'type' => 'warning',
+            'message' => 'You do not have have permission. The series was not removed.'
+        ];
+    }
 
     /* Delete Serie */
     $stmt = $pdo->prepare("DELETE FROM series WHERE id = ?");
@@ -410,7 +424,6 @@ function redirect($location){
  * @return bool current user id or False if not logged in
  */
 function get_user_id(){
-    session_start();
     if (isset($_SESSION['user_id'])){
         return $_SESSION['user_id'];
     } else {
@@ -418,6 +431,12 @@ function get_user_id(){
     }
 }
 
+/**
+ * Get current users fullname
+ * @param PDO databse connection
+ * @param int user id
+ * @return String  Users first and lastname
+ */
 function get_name($pdo ,$user_id){
     $stmt = $pdo->prepare('SELECT firstname,lastname FROM users WHERE id = ?');
     $stmt->execute([$user_id]);
@@ -429,6 +448,11 @@ function get_name($pdo ,$user_id){
     return $firstname." ".$lastname;
 }
 
+/**
+ * Get total users
+ * @param PDO databse connection
+ * @return int sum of users
+ */
 function count_users($pdo){
     /* Get series */
     $stmt = $pdo->prepare('SELECT * FROM users');
@@ -437,6 +461,12 @@ function count_users($pdo){
     return $series;
 }
 
+/**
+ * Add user to database
+ * @param String $pdo databse connection
+ * @param array $form_data formdata
+ * @return array|string[] responds
+ */
 function register_user($pdo, $form_data){
     if (
         empty($form_data['username']) or
@@ -499,6 +529,12 @@ function register_user($pdo, $form_data){
 
 }
 
+/**
+ * Get active user session
+ * @param String $pdo databse connection
+ * @param array $form_data formdata
+ * @return array|string[] responds
+ */
 function login_user($pdo, $form_data){
     if (
         empty($form_data['username']) or
@@ -541,6 +577,10 @@ function login_user($pdo, $form_data){
     }
 }
 
+/**
+ * Check if user is logged in
+ * @return bool
+ */
 function check_login(){
     session_start();
     if (isset($_SESSION['user_id'])){
@@ -549,6 +589,10 @@ function check_login(){
         return False;
     }
 }
+
+/**
+ * Destroy active session
+ */
 function logout_user(){
     session_start();
     session_unset();
@@ -562,12 +606,22 @@ function logout_user(){
 
 }
 
+/**
+ * Check if user have permission to edit/remove serie
+ * @param int $id
+ * @return bool
+ */
 function check_permissions($id){
     session_start();
-    if ($_SESSION['user_id']==$id){
-        return True;
-    } else {
+    if(isset($_SESSION['user_id'])){
+        if ($_SESSION['user_id']==$id){
+            return True;
+        } else {
+            return False;
+        }
+    } else{
         return False;
     }
+
 }
 
