@@ -1,0 +1,15 @@
+{
+  "name": "jeunard1993/ddwt20_week3",
+  "description": "",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "jeunardboekhoudt",
+      "email": "j.g.boekhoudt@student.rug.nl"
+    }
+  ],
+  "require": {
+    "bramus/router": "1.5"
+  }
+}

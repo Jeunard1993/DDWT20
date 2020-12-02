@@ -258,3 +258,8 @@ function redirect($location){
     header(sprintf('Location: %s', $location));
     die();
 }
+
+function http_content_type($content_type){
+    header(sprintf('Location: %s', $content_type));
+}
+

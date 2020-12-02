@@ -10,9 +10,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36edaa38-aa1c-43ff-9647-b95a1560e805" name="Default Changelist" comment="Assignment almost done">
+    <list default="true" id="36edaa38-aa1c-43ff-9647-b95a1560e805" name="Default Changelist" comment="Assignment done">
+      <change afterPath="$PROJECT_DIR$/week3/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/DDWT20.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DDWT20.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/week2/model.php" beforeDir="false" afterPath="$PROJECT_DIR$/week2/model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/week3/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/model.php" beforeDir="false" afterPath="$PROJECT_DIR$/week3/model.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +23,17 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ComposerSettings">
-    <execution />
+    <pharConfigPath>$PROJECT_DIR$/week3/composer.json</pharConfigPath>
+    <execution>
+      <phar pharPath="$PROJECT_DIR$/week3/composer.phar" interpreterId="05538a24-c920-49af-8967-66f47f4f9178" />
+    </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="composer.json" />
+      </list>
+    </option>
   </component>
   <component name="Git.Pull.Settings">
     <option name="BRANCH" value="master" />
@@ -33,7 +46,12 @@
       <server id="20db837e-d301-4897-84b0-27dcea0c0996" name="Unnamed" />
     </servers>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
+    <include_path>
+      <path value="$PROJECT_DIR$/week3/vendor/composer" />
+      <path value="$PROJECT_DIR$/week3/vendor/bramus/router" />
+    </include_path>
+  </component>
   <component name="ProjectId" id="1k3opA7MpNAgqkiuWzjYosdPdyG" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -55,7 +73,16 @@
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/week3" />
+    </key>
+  </component>
   <component name="RunManager">
+    <configuration default="true" type="ComposerRunConfigurationType" factoryName="Composer Script">
+      <option name="pathToComposerJson" value="$PROJECT_DIR$/week3/composer.json" />
+      <method v="2" />
+    </configuration>
     <configuration name="DDWT20" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner directory="$PROJECT_DIR$" />
       <method v="2" />
@@ -82,7 +109,7 @@
       <workItem from="1605182736263" duration="4539000" />
       <workItem from="1605443660132" duration="10280000" />
       <workItem from="1605706041259" duration="13649000" />
-      <workItem from="1606126159519" duration="23881000" />
+      <workItem from="1606126159519" duration="33470000" />
     </task>
     <task id="LOCAL-00001" summary="Assignment done">
       <created>1605794768547</created>
@@ -105,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606393774065</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Assignment done">
+      <created>1606395335147</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1606395335147</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,15 +158,16 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Assignment done" />
     <MESSAGE value="Assignment almost done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Assignment almost done" />
+    <MESSAGE value="Assignment done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Assignment done" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-970" y="51" key="#CLI_Interpreters" timestamp="1605109591061">
-      <screen x="-1920" y="0" width="1920" height="1080" />
+    <state x="456" y="79" key="#CLI_Interpreters" timestamp="1606731304954">
+      <screen x="0" y="23" width="1280" height="732" />
     </state>
     <state x="-970" y="51" key="#CLI_Interpreters/-1920.0.1920.1080/0.23.1280.732@-1920.0.1920.1080" timestamp="1605109591061" />
+    <state x="456" y="79" key="#CLI_Interpreters/-1920.0.1920.1080/0.23.1280.732@0.23.1280.732" timestamp="1606731304954" />
     <state x="-970" y="51" key="#CLI_Interpreters/-1920.0.1920.1080/0.23.1280.733@-1920.0.1920.1080" timestamp="1605107448687" />
     <state x="-994" y="83" key="#PHP" timestamp="1605109598831">
       <screen x="-1920" y="0" width="1920" height="1080" />
@@ -143,6 +178,10 @@
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
     <state x="-1104" y="76" key="#Test_Frameworks/-1920.0.1920.1080/0.23.1280.732@-1920.0.1920.1080" timestamp="1605110050143" />
+    <state x="394" y="308" width="491" height="249" key="ComposerInitDialogKey" timestamp="1606733681619">
+      <screen x="0" y="23" width="1280" height="732" />
+    </state>
+    <state x="394" y="308" width="491" height="249" key="ComposerInitDialogKey/-1920.0.1920.1080/0.23.1280.732@0.23.1280.732" timestamp="1606733681619" />
     <state x="-1168" y="368" key="Github.ShareDialog" timestamp="1605182282196">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
@@ -172,21 +211,27 @@
     </state>
     <state width="1218" height="170" key="GridCell.Tab.0.right/-1920.0.1920.1080/0.23.1280.732@-1920.0.1920.1080" timestamp="1605110148924" />
     <state width="1871" height="170" key="GridCell.Tab.0.right/-1920.0.1920.1080/0.23.1280.734@-1920.0.1920.1080" timestamp="1605180560196" />
+    <state x="437" y="98" key="RollbackChangesDialog" timestamp="1606735497458">
+      <screen x="0" y="23" width="1280" height="732" />
+    </state>
+    <state x="437" y="98" key="RollbackChangesDialog/-1920.0.1920.1080/0.23.1280.732@0.23.1280.732" timestamp="1606735497458" />
     <state x="-983" y="17" key="SettingsEditor" timestamp="1605182072807">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
     <state x="-983" y="17" key="SettingsEditor/-1920.0.1920.1080/0.23.1280.732@-1920.0.1920.1080" timestamp="1605182072807" />
     <state x="-983" y="17" key="SettingsEditor/-1920.0.1920.1080/0.23.1280.733@-1920.0.1920.1080" timestamp="1605107560596" />
-    <state x="-1575" y="128" key="Vcs.Push.Dialog.v2" timestamp="1606393804087">
-      <screen x="-1920" y="0" width="1920" height="1080" />
+    <state x="230" y="110" key="Vcs.Push.Dialog.v2" timestamp="1606731028533">
+      <screen x="0" y="23" width="1280" height="732" />
     </state>
-    <state x="-1575" y="128" key="Vcs.Push.Dialog.v2/-1920.0.1920.1080/0.23.1280.732@-1920.0.1920.1080" timestamp="1606393804087" />
+    <state x="-1575" y="128" key="Vcs.Push.Dialog.v2/-1920.0.1920.1080/0.23.1280.732@-1920.0.1920.1080" timestamp="1606395346999" />
+    <state x="230" y="110" key="Vcs.Push.Dialog.v2/-1920.0.1920.1080/0.23.1280.732@0.23.1280.732" timestamp="1606731028533" />
     <state x="230" y="110" key="Vcs.Push.Dialog.v2/-1920.0.1920.1080/0.23.1280.736@0.23.1280.736" timestamp="1604939742031" />
     <state x="230" y="110" key="Vcs.Push.Dialog.v2/0.23.1280.732@0.23.1280.732" timestamp="1606318758265" />
-    <state x="-414" y="483" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606393706299">
-      <screen x="-1920" y="0" width="1920" height="1080" />
+    <state x="876" y="351" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606907938490">
+      <screen x="0" y="23" width="1280" height="733" />
     </state>
-    <state x="-414" y="483" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.0.1920.1080/0.23.1280.732@-1920.0.1920.1080" timestamp="1606393706299" />
+    <state x="-414" y="483" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.0.1920.1080/0.23.1280.732@-1920.0.1920.1080" timestamp="1606395296581" />
+    <state x="876" y="351" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.0.1920.1080/0.23.1280.733@0.23.1280.733" timestamp="1606907938490" />
     <state x="876" y="350" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1280.732@0.23.1280.732" timestamp="1606318674349" />
     <state x="-1249" y="172" width="586" height="735" key="find.popup" timestamp="1605531760816">
       <screen x="-1920" y="0" width="1920" height="1080" />
