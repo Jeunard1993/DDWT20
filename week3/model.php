@@ -260,6 +260,26 @@ function redirect($location){
 }
 
 function http_content_type($content_type){
-    header(sprintf('Location: %s', $content_type));
+    header(sprintf('Content-Type: %s', $content_type));
+}
+
+function set_cred($username, $password){
+   return ["username" => $username, "password" => $password];
+}
+
+function check_cred($cred){
+    if (!isset($_SERVER['PHP_AUTH_USER'])){
+        return False;
+    } else {
+        if ($_SERVER['PHP_AUTH_USER'] != $cred['username']){
+            return False;
+        } elseif ($_SERVER['PHP_AUTH_PW'] != $cred['password']){
+            return False;
+        }
+        else{
+            return True;
+        }
+    }
+
 }
 

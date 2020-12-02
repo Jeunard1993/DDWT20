@@ -15,6 +15,9 @@ include 'model.php';
 /* Connect to DB */
 $db = connect_db('localhost', 'ddwt20_week3', 'ddwt20', 'ddwt20');
 
+/* Credintial */
+$cred = set_cred("ddwt20","ddwt20");
+
 /* Create Router instance */
 $router = new \Bramus\Router\Router();
 
@@ -54,9 +57,18 @@ $router->mount('/api', function() use ($router,$db) {
 
 });
 
+$router->before('GET|POST|PUT|DELETE', '/api/.*', function() use($cred){
+    if (!check_cred($cred)){
+        echo 'Authentication required.';
+        json_encode(http_response_code(401));
+        exit();
+    }
+    echo "Succesfully authenticated";
+});
+
 $router->set404(function() {
     header('HTTP/1.1 404 Not Found');
-    echo "This page doen't exist";
+    echo "This url is not valid";
 });
 // ...
 /* Run the router */
