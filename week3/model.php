@@ -259,14 +259,29 @@ function redirect($location){
     die();
 }
 
+/**
+ * Set the content type in header
+ * @param $content_type
+ */
 function http_content_type($content_type){
     header(sprintf('Content-Type: %s', $content_type));
 }
 
+/**
+ * Create an array containing the username and password
+ * @param $username String
+ * @param $password String
+ * @return array Array containing username and password
+ */
 function set_cred($username, $password){
    return ["username" => $username, "password" => $password];
 }
 
+/**
+ * Check if user has permission to access api
+ * @param $cred Array containing username and password
+ * @return bool
+ */
 function check_cred($cred){
     if (!isset($_SERVER['PHP_AUTH_USER'])){
         return False;

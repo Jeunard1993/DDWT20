@@ -23,6 +23,7 @@ $router = new \Bramus\Router\Router();
 
 // Add routes here
 $router->mount('/api', function() use ($router,$db) {
+    /* add header */
     http_content_type("application/json");
 
     /* GET for reading all series */
@@ -42,6 +43,7 @@ $router->mount('/api', function() use ($router,$db) {
         echo  json_encode(get_serieinfo($db,$id));
     });
 
+    /* Update individual series */
     $router->put('/series/(\d+)', function($id) use($db) {
         $_PUT = array();
         parse_str(file_get_contents('php://input'), $_PUT);
@@ -49,6 +51,7 @@ $router->mount('/api', function() use ($router,$db) {
         echo  json_encode(update_serie($db,$serie_info));
     });
 
+    /* Delete individual series */
     $router->delete('/series/(\d+)', function($id) use($db) {
         // Retrieve and output information
         echo  json_encode(remove_serie($db,$id));
@@ -57,6 +60,7 @@ $router->mount('/api', function() use ($router,$db) {
 
 });
 
+/* Check permission */
 $router->before('GET|POST|PUT|DELETE', '/api/.*', function() use($cred){
     if (!check_cred($cred)){
         echo 'Authentication required.';
@@ -68,7 +72,7 @@ $router->before('GET|POST|PUT|DELETE', '/api/.*', function() use($cred){
 
 $router->set404(function() {
     header('HTTP/1.1 404 Not Found');
-    echo "This url is not valid";
+    echo " This api is not valid, please check if api is correctly formulated.";
 });
 // ...
 /* Run the router */
